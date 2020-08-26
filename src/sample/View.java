@@ -60,8 +60,8 @@ public class View {
         gridPane.getChildren().add(new ImageView(image));
 
         //Setting the position of the image
-        imageView.setX(100);
-        imageView.setY(100);
+        imageView.setLayoutX(120);
+        imageView.setLayoutY(1);
 
         /** VIEW ELEMENTS */
 
@@ -91,8 +91,8 @@ public class View {
 
         // buttons
 
-        for (int x = 0; x < 10; x++) {
-            for (int y = 2; y < 16; y++) {
+        for (int x = 0; x < 8; x++) {
+            for (int y = 2; y < 10; y++) {
 
                 System.out.print("Add_button: " + x + " ,");
                 System.out.print("Add_button: " + y + " " );

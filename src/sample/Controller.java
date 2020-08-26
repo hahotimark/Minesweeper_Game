@@ -9,6 +9,14 @@ public class Controller {
 
     ElementType[][] anArray = new ElementType[10][14];
 
+    private Controller elementType;
+
+    public Controller (Controller elementType) {
+
+        super();
+        this.elementType = elementType;
+    }
+
 
     private ArrayList generateBomb() {
 

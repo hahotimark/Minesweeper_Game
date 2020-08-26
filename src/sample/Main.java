@@ -21,7 +21,6 @@ public class Main extends Application {
         View gameOn = new View();
         gameOn.start(stage);
 
-        Controller tartalom = new Controller();
 
 
 
