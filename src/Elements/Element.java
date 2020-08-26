@@ -1,7 +1,52 @@
 package Elements;
 
 public class Element {
-    public Element(ElementType empty) {
 
+    private ElementType elementType;
+
+    public Element(ElementType elementType) {
+        super();
+        this.elementType = elementType;
     }
+
+    public String getElementLetter()
+    {
+        String letter = "";
+
+
+        if(elementType == ElementType.EMPTY)
+        {
+            letter = "E";
+        }
+        else if(elementType == ElementType.BOMB)
+        {
+            letter = "B";
+        }
+        else if(elementType == ElementType.HERO)
+        {
+            letter = "H";
+        }
+        else if(elementType == ElementType.TREASURE)
+        {
+            letter = "T";
+        }
+        else if(elementType == ElementType.NOISE)
+        {
+            letter = "N";
+        }
+
+
+        return letter;
+    }
+
+    public ElementType getElementType() {
+        return elementType;
+    }
+
+    public void setElementType(ElementType elementType) {
+        this.elementType = elementType;
+    }
+
+
+
 }
