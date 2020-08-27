@@ -13,6 +13,8 @@ public class GameTable {
 
     public GameTable() {
 
+        System.out.println("Make game table...");
+
         gameTable = new Element[8][8];
 
         /** EMPTY */

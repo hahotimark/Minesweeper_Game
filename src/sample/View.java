@@ -1,5 +1,6 @@
 package sample;
 
+import Elements.ElementType;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -24,10 +25,12 @@ import javafx.scene.Scene;
 import javax.swing.*;
 import java.io.FileInputStream;
 
+import static Elements.ElementType.*;
+
 public class View {
 
 
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage, GameTable gt) throws Exception{
 
        boolean isAktiv = Debug.OnDebugmode();
        Debug.checkAndPrint(isAktiv, "Make Grid...");
@@ -53,15 +56,13 @@ public class View {
 
         Debug.checkAndPrint(true,"GridPane completed!");
 
-        Image image = new Image(new FileInputStream("C:\\Users\\hahot\\IdeaProjects\\Minesweeper\\src\\Elements\\imag.jpg"), 40, 40, false, false);
+       // Image image = new Image(new FileInputStream("C:\\Users\\hahot\\IdeaProjects\\Minesweeper\\src\\Elements\\imag.jpg"), 40, 40, false, false);
 
-        ImageView imageView = new ImageView(image);
-
-        gridPane.getChildren().add(new ImageView(image));
+//
+  //      gridPane.getChildren().add(new ImageView(image));
 
         //Setting the position of the image
-        imageView.setLayoutX(120);
-        imageView.setLayoutY(1);
+//        imageView.setLayoutY(1);
 
         /** VIEW ELEMENTS */
 
@@ -69,7 +70,7 @@ public class View {
 
         Button mode = new Button();
         mode.setText("D");
-        gridPane.add(mode, 0, 0);
+        gridPane.add(mode, 2, 10);
         mode.setStyle("-fx-background-color: #cfcedb; ");
 
         mode.setOnAction(new EventHandler<ActionEvent>() {
@@ -92,13 +93,16 @@ public class View {
         // buttons
 
         for (int x = 0; x < 8; x++) {
-            for (int y = 2; y < 10; y++) {
+            for (int y = 0; y < 8; y++) {
 
                 System.out.print("Add_button: " + x + " ,");
                 System.out.print("Add_button: " + y + " " );
 
-                Button field = new Button();
-                field.setText("M");
+
+                String gamefieldContent = gt.getCellContent(x, y);
+
+                Button field = new Button(gamefieldContent);
+                field.setText("[]");
                 gridPane.add(field, x, y);
 
                 field.setOnAction(new EventHandler<ActionEvent>() {
@@ -109,7 +113,59 @@ public class View {
 
                         ButtonListener.clickCounter();
 
+                       if (gamefieldContent == "B"){
+                           field.setText("B");
+                           field.setStyle("-fx-background-color: #000000; ");
 
+                           Stage lostWindow = new Stage();
+
+                           LostView victory = new LostView();
+                           try {
+                               victory.start(lostWindow);
+                           } catch (Exception ex) {
+                               ex.printStackTrace();
+                           }
+
+                           // vesztes ablak meghívása
+
+                            System.out.println("You ara dead!");
+                        }
+                       else if (gamefieldContent == "E"){
+                            field.setText("E");
+                            field.setStyle("-fx-background-color: #f2eb16; ");
+
+                            System.out.println("Empty field!");
+                        }
+                       else if (gamefieldContent == "N"){
+                           field.setText("N");
+                           field.setStyle("-fx-background-color: #e37209; ");
+
+                           System.out.println("Noise field!");
+                       }
+                       else if (gamefieldContent == "H"){
+                           field.setText("H");
+                           field.setStyle("-fx-background-color: #FFFFF; ");
+
+                           System.out.println("This is teh Hero!");
+                       }
+                       else{
+                           field.setText("T");
+                           field.setStyle("-fx-background-color: #24c7bf; ");
+
+                           Stage newWindow = new Stage();
+
+                           VictoryView victory = new VictoryView();
+                           try {
+                               victory.start(newWindow);
+                           } catch (Exception ex) {
+                               ex.printStackTrace();
+                           }
+                           // nyertes ablak meghívása
+
+
+                           System.out.println("Victory field!");
+
+                        }
 
                     }
 

@@ -18,8 +18,11 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+
+        GameTable gt = new GameTable();
+
         View gameOn = new View();
-        gameOn.start(stage);
+        gameOn.start(stage, gt);
 
 
 

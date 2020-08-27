@@ -2,10 +2,10 @@ package sample;
 
 public class ButtonListener {
 
- protected static int i = 0;
+ public static int i = 0;
 
 
-    static int clickCounter(){
+  public static int clickCounter(){
 
         i = i + 1;
 
