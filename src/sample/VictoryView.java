@@ -15,34 +15,36 @@ public class VictoryView {
     public void start(Stage newWindow) throws Exception {
 
 
-        GridPane gridPane = new GridPane();
+        GridPane gridPane2 = new GridPane();
 
         //Set layout
         //Setting size for the pane
-        gridPane.setMinSize(300, 300);
+        gridPane2.setMinSize(300, 300);
 
         //Setting the padding
-        gridPane.setPadding(new Insets(10, 20, 10, 20));
+       // gridPane.setPadding(new Insets(10, 20, 10, 20));
 
         //Setting the vertical and horizontal gaps between the columns
-        gridPane.setVgap(5);
-        gridPane.setHgap(5);
+        gridPane2.setVgap(6);
+        gridPane2.setHgap(6);
 
         //Setting the Grid alignment
-        gridPane.setAlignment(Pos.CENTER);
+        gridPane2.setAlignment(Pos.CENTER);
 
         Text text2 = new Text("Congratulation! You are winner!");
-        gridPane.add(text2, 1, 1);
+        gridPane2.add(text2, 1, 1);
 
         ButtonListener count = new ButtonListener();
 
-        Text text3 = new Text("You are win " + count.clickCounter() + " with steps!");
+        int number = count.clickCounter();
 
-        gridPane.add(text2, 2, 2);
+        Text text3 = new Text("You are win " + number + " with steps!");
+
+        gridPane2.add(text2, 2, 2);
 
 
         //Creating a scene object
-        Scene scene = new Scene(gridPane);
+        Scene scene = new Scene(gridPane2);
 
         System.out.println("\n Make scene...");
 
