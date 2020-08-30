@@ -1,31 +1,11 @@
 package sample;
 
-import Elements.ElementType;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-
-
-import javax.swing.*;
-import java.io.FileInputStream;
-
-import java.awt.*;
 
 public class LostView {
 

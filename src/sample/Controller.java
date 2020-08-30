@@ -1,7 +1,6 @@
 package sample;
 
 import Elements.ElementType;
-
 import java.util.ArrayList;
 import java.util.Random;
 

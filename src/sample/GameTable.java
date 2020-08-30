@@ -21,7 +21,7 @@ public class GameTable {
         createEmptyFields();
 
         /** HERO */
-        createHero();
+       // createHero();
 
         /** BOMB */
         createWumpus(3);

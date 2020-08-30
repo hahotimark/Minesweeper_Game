@@ -1,11 +1,11 @@
 package sample;
 
-import javafx.geometry.Insets;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -40,7 +40,26 @@ public class VictoryView {
 
         Text text3 = new Text("You are win " + number + " with steps!");
 
-        gridPane2.add(text2, 2, 2);
+        gridPane2.add(text3, 2, 2);
+
+        // Quit game
+
+        Button exit = new Button("Quit game");
+
+        gridPane2.add(exit, 3, 1);
+
+        exit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+
+                System.out.println("Quit game");
+
+                newWindow.close();
+
+
+            }
+
+        });
 
 
         //Creating a scene object
