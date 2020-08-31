@@ -1,6 +1,9 @@
 package sample;
 
 
+import Controller.ButtonListener;
+import Controller.GameTable;
+import Debugmode.Debug;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;

@@ -1,5 +1,6 @@
 package sample;
 
+import Controller.GameTable;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

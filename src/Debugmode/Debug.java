@@ -1,4 +1,4 @@
-package sample;
+package Debugmode;
 
 public class Debug {
 
