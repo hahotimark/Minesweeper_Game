@@ -109,6 +109,8 @@ public class Controller {
             {
                 /** CREATE NOISE *
                 // Click the other empty cells!
+                field.setText("E");
+                field.setStyle("-fx-background-color: #f2eb16; ");
             }
 
         }

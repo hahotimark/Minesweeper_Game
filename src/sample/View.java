@@ -8,10 +8,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
 
 
 public class View {
@@ -43,13 +48,31 @@ public class View {
 
         Debug.checkAndPrint(true,"GridPane completed!");
 
-       // Image image = new Image(new FileInputStream("C:\\Users\\hahot\\IdeaProjects\\Minesweeper\\src\\Elements\\imag.jpg"), 40, 40, false, false);
+        FileInputStream inputstream = new FileInputStream("static\\imag.jpg");
+        Image image = new Image(inputstream, 25, 25, false, false);
 
-//
-  //      gridPane.getChildren().add(new ImageView(image));
+        //Image image = new Image("static\\imag.jpg", 40, 40, false, false);
+
+
+       gridPane.getChildren().add(new ImageView(image));
+
+       ImageView imageView1 = new ImageView(image);
 
         //Setting the position of the image
-//        imageView.setLayoutY(1);
+        imageView1.setLayoutX(50);
+        imageView1.setLayoutY(20);
+
+        //setting the fit height and width of the image view
+        imageView1.setFitHeight(300);
+        imageView1.setFitWidth(250);
+
+        //Setting the preserve ratio of the image view
+        imageView1.setPreserveRatio(true);
+
+
+        //Setting the position of the image
+        //Node imageView;
+       // imageView.setLayoutY(1);
 
         /** VIEW ELEMENTS */
 
