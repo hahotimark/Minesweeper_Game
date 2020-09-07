@@ -30,6 +30,7 @@ public class GameTable {
         createTreasure();
 
         draw();
+
     }
 
 
@@ -178,5 +179,70 @@ public class GameTable {
             System.out.println();
         }
 
+    }
+
+    private void createONfields(int emptyCellRow, int emptyCellColumn)
+    {
+
+        int topRowIndex = 0, bottomRowIndex = 0;
+        int leftColumnIndex = 0, rightColumnIndex = 0;
+
+
+        if(emptyCellRow == 0)
+        {
+
+            topRowIndex = 0;
+            bottomRowIndex = 1;
+        }
+        else if (emptyCellRow == (this.gameTable.length -1))
+        {
+
+            topRowIndex = (this.gameTable.length - 2);
+            bottomRowIndex = (this.gameTable.length - 1);
+        }
+        else
+        {
+
+            topRowIndex = (emptyCellRow - 1);
+            bottomRowIndex = (emptyCellRow + 1);
+        }
+
+
+        if(emptyCellColumn == 0)
+        {
+
+            leftColumnIndex = 0;
+            rightColumnIndex = 1;
+        }
+        else if(emptyCellColumn == (this.gameTable.length -1))
+        {
+
+            leftColumnIndex = (this.gameTable.length - 2);
+            rightColumnIndex = (this.gameTable.length - 1);
+        }
+        else
+        {
+
+            leftColumnIndex = (emptyCellColumn - 1);
+            rightColumnIndex = (emptyCellColumn + 1);
+        }
+
+
+        for (int row = topRowIndex; row <= bottomRowIndex; row++) {
+
+            for (int column = leftColumnIndex; column <= rightColumnIndex; column++) {
+
+
+                if(this.gameTable[row][column].getElementType() == ElementType.EMPTY)
+                {
+
+                    // Click the other empty cells!
+                    //field.setText("E");
+                    //field.setStyle("-fx-background-color: #f2eb16; ");
+                }
+
+            }
+
+        }
     }
 }

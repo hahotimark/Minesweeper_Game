@@ -49,12 +49,12 @@ public class View {
         Debug.checkAndPrint(true,"GridPane completed!");
 
         FileInputStream inputstream = new FileInputStream("static\\imag.jpg");
-        Image image = new Image(inputstream, 25, 25, false, false);
+        Image image = new Image(inputstream, 26, 26, false, false);
 
         //Image image = new Image("static\\imag.jpg", 40, 40, false, false);
 
-
-       gridPane.getChildren().add(new ImageView(image));
+        gridPane.add(new ImageView(image), 3, 10);
+      // gridPane.getChildren().add(new ImageView(image));
 
        ImageView imageView1 = new ImageView(image);
 
@@ -145,6 +145,7 @@ public class View {
                             field.setStyle("-fx-background-color: #f2eb16; ");
 
                             System.out.println("Empty field!");
+
                         }
                        else if (gamefieldContent == "N"){
                            field.setText("N");
