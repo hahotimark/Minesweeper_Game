@@ -4,6 +4,10 @@ public class ButtonListener {
 
  public static int i = 0;
 
+ /*
+    Count filed click.
+  */
+
 
   public static int clickCounter(){
 

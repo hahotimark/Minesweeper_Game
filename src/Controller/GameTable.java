@@ -1,15 +1,12 @@
 package Controller;
 
 import java.util.Random;
-
-
 import Elements.ElementType;
 import Elements.Element;
 
 public class GameTable {
 
     private Element[][] gameTable;
-
 
     public GameTable() {
 
@@ -124,7 +121,6 @@ public class GameTable {
         }
     }
 
-
     /** TREASURE */
     private void createTreasure()
     {
@@ -140,16 +136,6 @@ public class GameTable {
         this.gameTable[randomRow][randomColumn] = new Element(ElementType.TREASURE);
     }
 
-/*
-    //HERO NOT USE!
-
-    private void createHero()
-    {
-        this.gameTable[0][0] = new Element(ElementType.HERO);
-    }
-*/
-
-    /** EMPTY */
     private void createEmptyFields()
     {
         for (int i = 0; i < gameTable.length; i++) {
@@ -160,7 +146,6 @@ public class GameTable {
 
         }
     }
-
 
     public String getCellContent(int row, int column)
     {
@@ -180,6 +165,10 @@ public class GameTable {
         }
 
     }
+
+    /*
+        Show empty cell
+     */
 
     private void createONfields(int emptyCellRow, int emptyCellColumn)
     {
@@ -235,7 +224,6 @@ public class GameTable {
 
                 if(this.gameTable[row][column].getElementType() == ElementType.EMPTY)
                 {
-
                     // Click the other empty cells!
                     //field.setText("E");
                     //field.setStyle("-fx-background-color: #f2eb16; ");

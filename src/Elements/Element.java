@@ -9,10 +9,13 @@ public class Element {
         this.elementType = elementType;
     }
 
+    /*
+        Print character
+     */
+
     public String getElementLetter()
     {
         String letter = "";
-
 
         if(elementType == ElementType.EMPTY)
         {
@@ -21,10 +24,6 @@ public class Element {
         else if(elementType == ElementType.BOMB)
         {
             letter = "B";
-        }
-        else if(elementType == ElementType.HERO)
-        {
-            letter = "H";
         }
         else if(elementType == ElementType.TREASURE)
         {

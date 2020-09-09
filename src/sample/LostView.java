@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 public class LostView {
 
 
-
     public void start(Stage lostWindow) throws Exception{
 
 
@@ -33,20 +32,18 @@ public class LostView {
         gridPane.setAlignment(Pos.CENTER);
 
         Text text2 = new Text("Ohh NOO!!! YOU LOST GAME! YOU ARE NOOB!");
-        gridPane.add(text2, 1, 1);
+        gridPane.add(text2, 0, 1);
 
         ButtonListener count = new ButtonListener();
 
         int step = count.clickCounter();
 
         Text text3 = new Text( "You are lost " + step + " with steps!");
-        gridPane.add(text3, 2, 2);
+        gridPane.add(text3, 0, 2);
 
         Button newGame = new Button("New Game");
 
-        gridPane.add(newGame, 3, 1);
-
-
+        gridPane.add(newGame, 0, 3);
 
 
         //Creating a scene object
@@ -64,6 +61,5 @@ public class LostView {
         //Displaying the contents of the stage
         lostWindow.show();
 
-
-}
+    }
 }

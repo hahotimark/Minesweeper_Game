@@ -27,9 +27,6 @@ public class View {
        boolean isAktiv = Debug.OnDebugmode();
        Debug.checkAndPrint(isAktiv, "Make Grid...");
 
-
-
-
         GridPane gridPane = new GridPane();
 
         //Set layout
@@ -48,15 +45,14 @@ public class View {
 
         Debug.checkAndPrint(true,"GridPane completed!");
 
+        // Add bomb Image
+
         FileInputStream inputstream = new FileInputStream("static\\imag.jpg");
         Image image = new Image(inputstream, 26, 26, false, false);
 
-        //Image image = new Image("static\\imag.jpg", 40, 40, false, false);
-
         gridPane.add(new ImageView(image), 3, 10);
-      // gridPane.getChildren().add(new ImageView(image));
 
-       ImageView imageView1 = new ImageView(image);
+        ImageView imageView1 = new ImageView(image);
 
         //Setting the position of the image
         imageView1.setLayoutX(50);
@@ -189,8 +185,6 @@ public class View {
             }
         }
 
-
-
         /** VIEW ELEMENTS */
 
 
@@ -207,9 +201,6 @@ public class View {
 
         //Displaying the contents of the stage
         stage.show();
-
-
-
 
 
     }

@@ -33,7 +33,7 @@ public class VictoryView {
         gridPane2.setAlignment(Pos.CENTER);
 
         Text text2 = new Text("Congratulation! You are winner!");
-        gridPane2.add(text2, 1, 1);
+        gridPane2.add(text2, 0, 1);
 
         ButtonListener count = new ButtonListener();
 
@@ -41,13 +41,13 @@ public class VictoryView {
 
         Text text3 = new Text("You are win " + number + " with steps!");
 
-        gridPane2.add(text3, 2, 2);
+        gridPane2.add(text3, 0, 2);
 
         // Quit game
 
         Button exit = new Button("Quit game");
 
-        gridPane2.add(exit, 3, 1);
+        gridPane2.add(exit, 0, 3);
 
         exit.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -56,7 +56,6 @@ public class VictoryView {
                 System.out.println("Quit game");
 
                 newWindow.close();
-
 
             }
 
@@ -76,7 +75,6 @@ public class VictoryView {
 
         //Displaying the contents of the stage
         newWindow.show();
-
 
     }
 }
